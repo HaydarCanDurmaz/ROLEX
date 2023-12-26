@@ -28,7 +28,7 @@ public class BaseDriver {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 20 sn mühlet: sayfayı yükleme mühlet
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        LoginTest();
+        RolexTestNG();
     }
 
     @AfterClass
@@ -40,18 +40,11 @@ public class BaseDriver {
     }
 
     @Test
-    void LoginTest() {
+    void RolexTestNG() {
 
-        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
+        driver.get("https://www.rolex.com/");
 
-        WebElement login = driver.findElement(By.id("input-email"));
-        login.sendKeys("zorbey@gmail.com");
 
-        WebElement password = driver.findElement(By.id("input-password"));
-        password.sendKeys("1234567");
-
-        WebElement submit = driver.findElement(By.cssSelector("input[class='btn btn-primary']"));
-        submit.click();
 
     }
 }
